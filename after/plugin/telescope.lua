@@ -6,4 +6,4 @@ vim.keymap.set('n', '<leader>ps', function()
 	builtin.grep_string({search = vim.fn.input("Grep > ")});
 end)
 vim.keymap.set('n', 'gr', function() builtin.lsp_references() end);
-local setup = require('telescope').setup{defaults ={file_ignore_patterns = {"node%_modules/.*", "./node%_modules/.*"}} }
+local setup = require('telescope').setup{defaults ={file_ignore_patterns = {"node%_modules/.*", "./node%_modules/.*", "pkg/*"}} }

@@ -21,4 +21,19 @@ vim.keymap.set("v", "<leader>d", "\"_d")
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
+
+vim.keymap.set("n", "<tab>h", "<C-w><C-h>")
+vim.keymap.set("n", "<tab>j", "<C-w><C-j>")
+vim.keymap.set("n", "<tab>k", "<C-w><C-k>")
+vim.keymap.set("n", "<tab>l", "<C-w><C-l>")
+
+vim.keymap.set("t", "<tab>h", "<C-\\><C-n><C-w><C-h>")
+vim.keymap.set("t", "<tab>j", "<C-\\><C-n><C-w><C-j>")
+vim.keymap.set("t", "<tab>k", "<C-\\><C-n><C-w><C-k>")
+vim.keymap.set("t", "<tab>l", "<C-\\><C-n><C-w><C-l>")
+
+vim.keymap.set("n", "<C-s-Left>", ":vertical resize -10<cr>")
+vim.keymap.set("n", "<C-s-Right>", ":vertical resize +10<cr>")
+vim.keymap.set("n", "<C-s-Up>", ":resize +5<cr>")
+vim.keymap.set("n", "<C-s-Down>", ":resize -5<cr>")
