@@ -36,6 +36,8 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
   use('uiiaoo/java-syntax.vim')
+  use('natecraddock/workspaces.nvim')
+  use('junegunn/gv.vim')
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v3.x',
