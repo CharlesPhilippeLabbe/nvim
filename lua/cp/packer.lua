@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
 	  'rose-pine/neovim',
 	  as = 'rose-pine'
   })
+  use('sgeb/vim-diff-fold')
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
@@ -38,6 +39,8 @@ return require('packer').startup(function(use)
   use('uiiaoo/java-syntax.vim')
   use('natecraddock/workspaces.nvim')
   use('junegunn/gv.vim')
+  use('mfussenegger/nvim-jdtls')
+  use('savq/melange-nvim')
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v3.x',
@@ -54,7 +57,6 @@ return require('packer').startup(function(use)
 		  {'hrsh7th/cmp-buffer'},
 		  {'hrsh7th/cmp-path'},
 		  {'hrsh7th/cmp-nvim-lua'},
-		  {'saadparwaiz1/cmp_luasnip'},
 		  {'saadparwaiz1/cmp_luasnip'},
 		  {'L3MON4D3/LuaSnip'},
 		  {'rafamadriz/friendly-snippets'},
