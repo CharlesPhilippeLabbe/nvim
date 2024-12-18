@@ -27,6 +27,7 @@ vim.keymap.set("n", "<tab>h", "<C-w><C-h>")
 vim.keymap.set("n", "<tab>j", "<C-w><C-j>")
 vim.keymap.set("n", "<tab>k", "<C-w><C-k>")
 vim.keymap.set("n", "<tab>l", "<C-w><C-l>")
+vim.keymap.set("n", "X", "hvk$x")
 
 vim.keymap.set("t", "<tab>h", "<C-\\><C-n><C-w><C-h>")
 vim.keymap.set("t", "<tab>j", "<C-\\><C-n><C-w><C-j>")

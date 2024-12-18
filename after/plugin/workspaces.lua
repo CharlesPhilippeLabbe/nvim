@@ -84,5 +84,5 @@ workspaces.setup({
 
 
 
-vim.keymap.set("n", "wo", workspaces.open)
-vim.keymap.set("n", "wa", workspaces.add)
+vim.keymap.set("n", "<leader>wo", workspaces.open)
+vim.keymap.set("n", "<leader>wa", workspaces.add)
