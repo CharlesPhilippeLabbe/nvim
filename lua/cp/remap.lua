@@ -33,6 +33,7 @@ vim.keymap.set("t", "<tab>h", "<C-\\><C-n><C-w><C-h>")
 vim.keymap.set("t", "<tab>j", "<C-\\><C-n><C-w><C-j>")
 vim.keymap.set("t", "<tab>k", "<C-\\><C-n><C-w><C-k>")
 vim.keymap.set("t", "<tab>l", "<C-\\><C-n><C-w><C-l>")
+vim.keymap.set("t", "<esc>", "<C-\\><C-n>")
 
 vim.keymap.set("n", "<C-s-Left>", ":vertical resize -10<cr>")
 vim.keymap.set("n", "<C-s-Right>", ":vertical resize +10<cr>")
