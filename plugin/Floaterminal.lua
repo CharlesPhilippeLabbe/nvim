@@ -36,21 +36,49 @@ local function create_floating_window(opts)
     return {buf = buf, win = win}
 end
 
+local show_terminal = function()
+    state.floating = create_floating_window { buf = state.floating.buf }
+    if vim.bo[state.floating.buf].buftype ~= "terminal" then
+        vim.cmd.terminal()
+    end
+    state.floating.job = vim.bo.channel
+    vim.cmd('startinsert')
+end
+
+local hide_terminal = function()
+    state.floating.job = vim.bo.channel
+    vim.api.nvim_win_hide(state.floating.win)
+end
+
 local toggle_terminal = function()
     if vim.api.nvim_win_is_valid(state.floating.win) then
-        vim.api.nvim_win_hide(state.floating.win)
+        hide_terminal()
     else
-        state.floating = create_floating_window { buf = state.floating.buf }
-        if vim.bo[state.floating.buf].buftype ~= "terminal" then
-            vim.cmd.terminal()
-            state.floating.job = vim.bo.channel
-        end
+        show_terminal()
     end
 end
 
 vim.api.nvim_create_user_command("Floaterminal", toggle_terminal, {})
-vim.keymap.set({"n", "t"}, "<leader><tab>", toggle_terminal)
+vim.keymap.set({"n", "t"}, "<tab><leader>", toggle_terminal)
 
 vim.keymap.set("n", "<leader>ls", function()
     vim.fn.chansend(state.floating.job, {"ls -al\r\n"})
 end)
+
+local selected_text = function()
+  local mode = vim.api.nvim_get_mode().mode
+  local opts = {}
+  -- \22 is an escaped version of <c-v>
+  if mode == "v" or mode == "V" or mode == "\22" then opts.type = mode end
+  return vim.fn.getregion(vim.fn.getpos "v", vim.fn.getpos ".", opts)
+end
+
+vim.keymap.set("v", "<tab><leader>", function()
+    local lines = selected_text()
+
+    print(lines)
+    show_terminal()
+    vim.fn.chansend(state.floating.job, {table.concat(lines, "\r\n")})
+
+end)
+
