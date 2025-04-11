@@ -82,7 +82,7 @@ vim.g.maplocalleader = "\\"
 		  -- LSP Support
 		  {'neovim/nvim-lspconfig'},
 		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
+		  {'hrsh7th/nvim-cmp', commit = 'b356f2c'},
 		  {'hrsh7th/cmp-nvim-lsp'},
 		  {'hrsh7th/cmp-buffer'},
 		  {'hrsh7th/cmp-path'},
