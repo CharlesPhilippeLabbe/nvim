@@ -32,7 +32,7 @@ vim.opt.colorcolumn = "80,120"
 vim.g.mapleader = " "
 
 vim.opt.cursorline = true
-vim.api.nvim_set_option("clipboard", "unnamedplus")
+vim.api.nvim_set_option("clipboard", "")
 
 local job_id = 0
 vim.keymap.set("n", "<leader>st", function()
@@ -46,3 +46,11 @@ end)
 vim.keymap.set("n", "<leader>ex", function()
     vim.fn.chansend(job_id, {"ls -al\r\n"})
 end)
+
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+-- vim.opt["guicursor"] = ""
+vim.api.nvim_set_option("guicursor", "n-c-v:block-nCursor")
+
+vim.opt.path:append("src/include")

@@ -39,8 +39,13 @@ vim.keymap.set("n", "<C-s-Right>", ":vertical resize +10<cr>")
 vim.keymap.set("n", "<C-s-Up>", ":resize +5<cr>")
 vim.keymap.set("n", "<C-s-Down>", ":resize -5<cr>")
 
+vim.keymap.set("n", "<Up>", ":<Up")
+vim.keymap.set("n", "<C-Up>", "/<Up")
+
 
 --vim.keymap.set("n", "<Enter>", "o<Esc>k")
 vim.keymap.set("i", "<C-J>", "<CR><Esc>k$a")
 vim.keymap.set("n", "ZL", "20zl")
 vim.keymap.set("n", "ZH", "20zh")
+
+vim.keymap.set("n", "-", ":Ex<cr>")

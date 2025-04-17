@@ -65,6 +65,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "VimEnter" }, {
 -- workspace.
 
 local workspaces = require("workspaces")
+local resetFile = "/home/clabb/.config/nvim/lua/cp/set.lua"
+local remapFile = "/home/clabb/.config/nvim/lua/cp/remap.lua"
 workspaces.setup({
   hooks = {
     open = {
@@ -77,7 +79,19 @@ workspaces.setup({
 
       function()
         require('telescope.builtin').find_files()
-      end,
+        end,
+--    function()
+--          local workFile = workspaces.path() .. ".nvim.lua"
+--          --TODO cleanup
+--          local f=io.open(workFile,"r")
+--          if f~=nil then
+--              io.close(f)
+--              dofile(workFile)
+--          else
+--              dofile(resetFile)
+--              dofile(remapFile)
+--          end
+--      end
     }
   }
 })

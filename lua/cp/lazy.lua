@@ -43,6 +43,7 @@ vim.g.maplocalleader = "\\"
       -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
       -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
       lazy = false,
+      enabled = false
   },
   {'natecraddock/workspaces.nvim', enabled=true},
   {
@@ -57,15 +58,6 @@ vim.g.maplocalleader = "\\"
 		  vim.cmd('set background=dark')
 		  vim.cmd('colorscheme everforest') 
 	  end
-  },
-  {
-	  'ku1ik/vim-monokai',
-	  as = 'monokai'
-  },
-  {
-
-	  'rose-pine/neovim',
-	  as = 'rose-pine'
   },
   {
       'nvim-treesitter/nvim-treesitter',
@@ -95,6 +87,7 @@ vim.g.maplocalleader = "\\"
   {
       "nvim-neo-tree/neo-tree.nvim",
       branch = "v3.x",
+	  enabled=false,
       dependencies = {
           "nvim-lua/plenary.nvim",
           "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
