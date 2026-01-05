@@ -19,6 +19,10 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
 
+  vim.keymap.set("n", "<C-s>", function() 
+      vim.lsp.buf.format()
+      vim.cmd('write')
+  end, opts)
   vim.keymap.set("n", "<leader>vf", function() vim.lsp.buf.format({async = false}) end, opts)
   
 end)
@@ -33,7 +37,7 @@ require('mason-lspconfig').setup({
     lsp_zero.default_setup,
     lua_ls = function()
       local lua_opts = lsp_zero.nvim_lua_ls()
-      require('lspconfig').lua_ls.setup(lua_opts)
+      vim.lsp.config("lua_ls", lua_opts)
     end,
   }
 })
@@ -64,9 +68,9 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
   }),
 })
-local lspconfig = require('lspconfig')
-lspconfig.clangd.setup({
+vim.lsp.config("clangd",{
   cmd = {'clangd', '--background-index'},
   init_options = {
   },
 })
+vim.lsp.enable("clangd")
