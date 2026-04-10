@@ -6,4 +6,14 @@ function ColorMyPencils(color)
     --vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 end
 
-ColorMyPencils()
+
+return   {
+    'sainnhe/everforest',
+    as = 'everforest',
+    config = function()
+        vim.cmd('set background=dark')
+        vim.cmd('colorscheme everforest') 
+        ColorMyPencils()
+    end
+}
+
