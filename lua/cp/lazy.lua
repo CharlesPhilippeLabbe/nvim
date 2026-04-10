@@ -22,7 +22,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
-    spec = "cp.lazy",
+    spec = "cp.lazy_plugins",
     change_detection = { notify = false }
 })
 
